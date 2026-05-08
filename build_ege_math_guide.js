@@ -15,8 +15,8 @@ const PDFJS_MODULE_URL = pathToFileURL(
   path.join(NODE_MODULES_DIR, "pdfjs-dist", "legacy", "build", "pdf.mjs"),
 ).href;
 
-const OUTPUT_HTML_NAME = "ege_math_study_guide.html";
-const OUTPUT_ASSETS_DIR_NAME = "ege_math_study_guide_assets";
+const OUTPUT_HTML_NAME = "index.html";
+const OUTPUT_ASSETS_DIR_NAME = "assets";
 const FIRST_CONTENT_PAGE = 4;
 const PREVIEW_WIDTH = 1040;
 const PREVIEW_CROP_RATIOS = {
@@ -1671,6 +1671,7 @@ async function main() {
   });
 
   fs.writeFileSync(outputHtmlPath, html, "utf8");
+  fs.writeFileSync(path.join(baseDir, ".nojekyll"), "", "utf8");
   console.log(`Готово: ${outputHtmlPath}`);
 }
 
